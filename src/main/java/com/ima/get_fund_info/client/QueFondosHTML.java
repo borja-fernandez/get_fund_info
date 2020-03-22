@@ -28,8 +28,8 @@ public class QueFondosHTML {
     }
 
     private static void updateMutualFund(MutualFund mutualFund, Element element){
-        System.out.println(element.text());
-        element.getAllElements().forEach(e -> System.out.println(e.text()));
+        //System.out.println(element.text());
+        //element.getAllElements().forEach(e -> System.out.println(e.text()));
         try {
 
             String key = element.text().split(":")[0];
@@ -66,9 +66,6 @@ public class QueFondosHTML {
                 if (key.equalsIgnoreCase(QueFondosDictionary.NET_DATE)) {
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                     mutualFund.setValueDate(formatter.parse(value));
-                    System.out.println("Fecha:" + value);
-                    System.out.println("Fecha:" + mutualFund.getValueDate());
-                    System.out.println("Fecha:" + formatter.format(mutualFund.getValueDate()));
                 }
 
             }
