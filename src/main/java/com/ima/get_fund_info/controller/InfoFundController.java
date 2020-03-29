@@ -17,19 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "InfoFund/v1/")
-public class InfoFundControler {
+public class InfoFundController {
 
     @Autowired
     private FinancialTimeProxy financialTimeProxy;
 
-    @GetMapping(path = "name/{isin}")
+    @GetMapping(path = "financialtimes/isin/{isin}")
     public String getName(@PathVariable("isin") String isin){
 
         return financialTimeProxy.getHTML(isin);
 
     }
 
-    @GetMapping(path = "jsoup/name/{isin}")
+    @GetMapping(path = "quefondos/isin/{isin}")
     public MutualFund getNameJSOUP(@PathVariable("isin") String isin){
 
          try {

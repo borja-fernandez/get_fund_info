@@ -1,3 +1,5 @@
 applications:
-  - name: get_fund_info
-    path: ..\build\libs\get_fund_info-0.0.1-SNAPSHOT.jar
+  - name: get-fund-info
+    path: ..\build\libs\get-fund-info-0.0.1-SNAPSHOT.jar
+#    services:
+#      - ima_server_registry
