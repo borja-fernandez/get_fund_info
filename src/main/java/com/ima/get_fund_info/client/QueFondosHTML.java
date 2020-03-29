@@ -33,7 +33,7 @@ public class QueFondosHTML {
         try {
 
             String key = element.text().split(":")[0];
-            System.out.println(key);
+//            System.out.println(key);
 
             if (key.equalsIgnoreCase(QueFondosDictionary.FUND_HOUSE) ||
                     key.equalsIgnoreCase(QueFondosDictionary.FUND_CATEGORY) ||
@@ -54,26 +54,22 @@ public class QueFondosHTML {
                 if (key.equalsIgnoreCase(QueFondosDictionary.ISIN)) mutualFund.setIsin(value);
                 if (key.equalsIgnoreCase(QueFondosDictionary.CURRENCY)) mutualFund.setCurrencyISO(value);
                 if (key.equalsIgnoreCase(QueFondosDictionary.CONSTANT_EXPENSE) || key.equalsIgnoreCase(QueFondosDictionary.STORE_EXPENSE)) {
-                    System.out.println("ENTRA PARA COGER EL FIJO O EL DEPÓSICO");
                     value = value.substring(0, value.length() - 1);
                     Locale spanish = new Locale("es", "ES");
                     NumberFormat nf = NumberFormat.getInstance(spanish);
                     mutualFund.setExpensesRatio(mutualFund.getExpensesRatio() + nf.parse(value).doubleValue());
                 }
                 if (key.equalsIgnoreCase(QueFondosDictionary.NET_VALUE)) {
-                    System.out.println("ENTRA PARA COGER EL VALOR LIQUIDATIVO");
                     value = value.split(" ")[0];
                     Locale spanish = new Locale("es", "ES");
                     NumberFormat nf = NumberFormat.getInstance(spanish);
                     mutualFund.setNetValue(nf.parse(value).doubleValue());
                 }
                 if (key.equalsIgnoreCase(QueFondosDictionary.NET_DATE)) {
-                    System.out.println("ENTRA PARA COGER LA FECHA");
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                     mutualFund.setValueDate(formatter.parse(value));
                 }
                 if (key.equalsIgnoreCase(QueFondosDictionary.DIFFERENCE)) {
-                    System.out.println("ENTRA PARA COGER LA DIFERENCIA");
                     value = value.substring(0, value.length() - 1);
                     Locale spanish = new Locale("es", "ES");
                     NumberFormat nf = NumberFormat.getInstance(spanish);
