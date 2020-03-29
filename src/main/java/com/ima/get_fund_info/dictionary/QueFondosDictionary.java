@@ -10,4 +10,5 @@ public class QueFondosDictionary {
     public static String STORE_EXPENSE = "DEPÓSITO";
     public static String NET_VALUE = "VALOR LIQUIDATIVO";
     public static String NET_DATE = "FECHA";
+    public static String DIFFERENCE = "1 DÍA";
 }

@@ -22,5 +22,6 @@ public class MutualFund {
     private double expensesRatio;
     private double netValue;
     private Date valueDate;
+    private double dailyChange;
 
 }
