@@ -1,7 +1,10 @@
 package com.ima.get_fund_info.client;
 
+import com.ima.get_fund_info.controller.InfoFundController;
 import com.ima.get_fund_info.dictionary.QueFondosDictionary;
 import com.ima.get_fund_info.model.MutualFund;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,6 +13,8 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class QueFondosHTML {
+
+    private static final Logger logger = LogManager.getLogger(QueFondosHTML.class);
 
     public static MutualFund getFund(String isin) throws Exception{
 

@@ -27,25 +27,33 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation ('org.springframework.boot:spring-boot-starter-web')
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     //Security
-    implementation 'org.springframework.cloud:spring-cloud-starter-security'
+    implementation ('org.springframework.cloud:spring-cloud-starter-security')
 
     //jsoop -> Parsing HTML
-    implementation "org.jsoup:jsoup:1.10.2"
+    implementation ("org.jsoup:jsoup:1.10.2")
 
     //Feign
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation ('org.springframework.cloud:spring-cloud-starter-openfeign')
 
-    //Eureka
-    //implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    //Eureka pcf
+    implementation ('io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry:2.1.4.RELEASE')
+
+    //Spring Cloud Sleuth
+    implementation ('org.springframework.cloud:spring-cloud-starter-sleuth')
+
+    //log4j2
+//    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    //RabbitMQ
+    implementation ('org.springframework.boot:spring-boot-starter-amqp')
+    implementation('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 
 
 }
